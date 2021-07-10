@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Solu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#875A7B">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="icon" href="/css/favicon.ico">
+  <style>
+    .page-header {
+      background-image: none;
+      background-color: #875A7B;
+    }
+    .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+      color: #009688;
+    }
+    a {
+      color: #875A7B;
+    }
+    @media only screen and (max-width: 548px) {
+      div > img {
+        max-width: 60%!important;
+      }
+    }
+  </style>
+</head>
+
+
+  <body>
+    <section class="page-header">
+  <h1 class="project-name">Solu Framework</h1>
+  <h2 class="project-tagline">Solu is a suite of software frameworks that uses the latest web tecnologies</h2>
+</section>
+
+
+    <section class="main-content">
+      
+      <div id="home">
+  <p>We design the software architecture of Solu to always met our client's requirements with just the exact solution for their needs.</p>
+  <p>Solu has been implemented in various specific fields such as IoT, AGV-equipped WMS (Automated Guided Vehicles), Manufacturing Traceability and Inspection, and ERP.</p>
+  <h1>IoT</h1>
+  <div style="display: flex; flex-wrap: wrap; margin-bottom: 50px;">
+    <img src="css/robot-arm.png" style="height: 100%; max-width: 40%; margin-right: 10px; border-radius: 5px;">
+    <p style="width: 50%; min-width: 300px;">Over the past years we have been automating some of manufacturing sections that are able to be replaced by software and robots.</p>
+  </div>
+  <div style="display: flex; flex-wrap: wrap-reverse; margin-bottom: 50px;">
+    <p style="width: 50%; min-width: 300px;">The true solution lies somewhere between perfection and availability. Keep the established legacy technologies to its respective places while we interface the crucial data to be visualized with modern techniques.</p>
+    <img src="css/touching-inspection.png" style="height: 100%; max-width: 40%; margin-left: 10px; border-radius: 5px;">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; margin-bottom: 50px;">
+    <img src="css/agv-wms.png" style="height: 100%; max-width: 40%; margin-right: 10px; border-radius: 5px;">
+    <p style="width: 50%; min-width: 300px; margin-top: 3px;">In this another era of Industrial Revolution clients are forced to choose the most versatile tool for their problems. And with Solu's use of the latest Web and Javascript technologies it enables it to run anything, anywhere.</p>
+  </div>
+  <h1>Technologies</h1>
+  <p style="margin-bottom: 50px;">We choose Solu's underlying technologies with the best option out there. Solu uses <a href="https://rpython.readthedocs.io/en/latest/rpython.html">RPython</a>, a restricted subset of Python that is amenable to static analysis (static compilation). We also fork RPython to be able to compile to <a href="https://en.wikipedia.org/wiki/WebAssembly">WebAssembly</a>, so it can be run on everywhere possible.</p>
+  <div style="display: flex; flex-wrap: wrap-reverse; margin-bottom: 50px;">
+    <p style="width: 50%; min-width: 300px;">We also use powerful Javascript libraries for our projects. With the Javascript ecosystem, we can build any kind of software ranging from Ecommerce, CRM and PoS Systems to more complex one like Robot Aided Manufacturing Inspection, and AGV Warehouse Routing systems.</p>
+    <img src="css/3d-inspection.png" style="height: 100%; max-width: 40%; margin-left: 10px; border-radius: 5px;">
+  </div>
+  <h1>Performance</h1>
+  <div style="display: flex; flex-wrap: wrap; margin-bottom: 50px;">
+    <img src="css/decentralize.png" style="height: 100%; max-width: 40%; margin-right: 10px; border-radius: 5px;">
+    <p style="width: 50%; min-width: 300px; margin-top: 3px;">Solu is crafted with decentralization in mind. We always opt-in for decentralized infrastructure whenever we can. Although with PouchDB's <a href="https://pouchdb.com/adapters.html">Abstraction Layer</a> it doesn't matter whether our client asks to use centralized/decentralized database, or even a relational/non-relational database. It is also possible to use Solu as a series of Microservices.</p>
+  </div>
+  
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">StockMove</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s">'stock.move'</span>
+
+    <span class="c1">#Some code...
+</span>
+    <span class="o">@</span><span class="n">asynchronous</span>
+    <span class="k">def</span> <span class="nf">create_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order_line_ids</span><span class="p">):</span>
+        <span class="n">location_id</span><span class="p">,</span> <span class="n">move_ids</span> <span class="o">=</span> 
+            <span class="bp">self</span><span class="p">.</span><span class="n">env</span><span class="p">[</span><span class="s">'stock.location'</span><span class="p">].</span><span class="n">browse</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">context</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'active_location_id'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)).</span><span class="n">wait</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">Object</span><span class="p">.</span><span class="n">fromList</span><span class="p">([</span><span class="n">JSON</span><span class="p">.</span><span class="n">fromDict</span><span class="p">({</span><span class="s">'product_id'</span><span class="p">:</span> <span class="n">order_line_id</span><span class="p">.</span><span class="n">product_id</span><span class="p">,</span> <span class="s">'product_qty'</span><span class="p">:</span> <span class="n">JSON</span><span class="p">.</span><span class="n">fromFloat</span><span class="p">(</span><span class="n">order_line_id</span><span class="p">.</span><span class="n">product_qty</span><span class="p">),</span> <span class="s">'uom_id'</span><span class="p">:</span> <span class="n">order_line_id</span><span class="p">.</span><span class="n">uom_id</span><span class="p">,</span> <span class="s">'partner_ids'</span><span class="p">:</span> <span class="n">JSON</span><span class="p">.</span><span class="n">fromList</span><span class="p">(</span><span class="n">order_line_id</span><span class="p">.</span><span class="n">partner_ids</span><span class="p">)})</span> <span class="k">for</span> <span class="n">order_line_id</span> <span class="ow">in</span> <span class="n">order_line_ids</span><span class="p">])).</span><span class="n">wait</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">location_id</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="p">.</span><span class="n">ValidationError</span><span class="p">(</span><span class="s">"You haven't set the active location for this transaction"</span><span class="p">)</span>
+        <span class="n">move_ids</span><span class="p">.</span><span class="n">confirm_move</span><span class="p">(</span><span class="n">location_id</span><span class="p">).</span><span class="n">wait</span><span class="p">()</span>
+</code></pre></div></div>
+
+  <p style="margin-top: 50px;">
+    The builtin ORM of Solu is also created with that in mind. We provide an extremely easy asynchronous ORM API that performs blazing fast, especially in a decentralized environment. Because of our static code compilation, we can detect most of development errors leaving the software without bugs except for runtime errors. And in case of unovaidable runtime errors (like out of memory, out of storage, network down, and etc) we also provide developers to be able to handle the error gracefully (such as cancelling a cancellable transaction or reverting data).
+  </p>
+  <h1>Our work</h1>
+  
+  <ul>
+  <li><a href="https://github.com/soIu/framework">Solu</a> (the framework itself)</li>
+  <li><a href="https://github.com/soIu/pyrex">Pyrex</a> (React bindings in RPython)</li>
+  <li><a href="https://github.com/soIu/rpython">RPython</a> (our fork of RPython)</li>
+  <li><a href="https://github.com/soIu/rapydscript-plugin">RapydScript Plugin</a> (internal RapydScript plugin to code on React Native)</li>
+</ul>
+
+</div>
+
+
+
+    </section>
+
+  </body>
+</html>
