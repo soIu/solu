@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <script>
+    fetch(location.hash.slice(1)).then(function (response) {
+      return response.blob();
+    }).then(function (blob) {
+      location.href = URL.createObjectURL(blob);
+    }).catch(alert);
+    </script>
+  </body>
+</html>
