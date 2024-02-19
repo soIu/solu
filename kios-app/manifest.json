@@ -1,0 +1,17 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "lang": "en",
+  "name": "pupukkiosk",
+  "short_name": "pupukkiosk",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "http://play.google.com/store/apps/details?id=com.anonymous.pupukkiosk",
+      "id": "com.anonymous.pupukkiosk"
+    }
+  ],
+  "prefer_related_applications": true
+}
